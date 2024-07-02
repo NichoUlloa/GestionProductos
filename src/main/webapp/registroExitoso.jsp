@@ -6,22 +6,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <title>Registro Exitoso</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
-<h1 class="encabezado">Registro Exitoso</h1>
-<div class="centrado">
-    <p class="subtitulo">El registro del producto fue exitoso.</p><br>
-    <label class="campoTexto">Producto: <c:out value="${producto.getNombreProducto()}"></c:out></label><br>
-    <label class="campoTexto">Precio: <c:out value="${producto.getPrecioProducto()}"></c:out></label><br>
-    <label class="campoTexto">Stock: <c:out value="${producto.getStockProducto()}"></c:out></label><br>
-    <a class="boton" href="/GestionProductos">Volver</a>
-</div>
+<header>
+    <h1>Registro Exitoso</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="${pageContext.request.contextPath}/index.jsp">Inicio</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Ha sido registrado exitosamente.</h2>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Gestión de Productos. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>
+
 

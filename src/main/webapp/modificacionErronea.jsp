@@ -9,14 +9,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <title>Modificación Errónea</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
-<h1 class="encabezado">Modificación Errónea</h1>
-<div class="centrado">
-    <p class="subtitulo">Hubo un error al modificar el producto. Por favor, intente nuevamente.</p><br>
-    <a class="boton" href="/GestionProductos">Volver al Menú Principal</a>
-</div>
+<header>
+    <h1>Modificación Errónea</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="${pageContext.request.contextPath}/index.jsp">Inicio</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Ha ocurrido un error al intentar modificar el producto.</h2>
+        <p>Por favor, vuelva a intentarlo.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Gestión de Productos. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>
+

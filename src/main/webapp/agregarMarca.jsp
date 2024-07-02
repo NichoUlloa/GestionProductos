@@ -1,22 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Nicho
-  Date: 18-06-2024
-  Time: 5:14
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Eliminar Producto</title>
+    <title>Agregar Marca</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
 <div class="container">
     <header>
-        <h1>Eliminar Producto</h1>
+        <h1>Agregar Marca</h1>
     </header>
     <nav>
         <ul>
@@ -25,13 +18,13 @@
     </nav>
     <main>
         <section>
-            <h2>Formulario de Eliminar Producto</h2>
-            <form action="eliminarProducto" method="post">
+            <h2>Formulario de Agregar Marca</h2>
+            <form action="agregarMarca" method="post">
                 <div class="form-group">
-                    <label for="idProducto">ID del Producto:</label>
-                    <input id="idProducto" name="idProducto" type="number" class="campoTexto" required>
+                    <label for="nombre">Nombre:</label>
+                    <input id="nombre" name="nombre" type="text" class="campoTexto" required>
                 </div>
-                <input type="submit" value="Eliminar Producto" class="boton">
+                <input type="submit" value="Agregar Marca" class="boton">
             </form>
         </section>
     </main>

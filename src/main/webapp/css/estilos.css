@@ -1,135 +1,250 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    color: #212529;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    width: 1500px;
+    max-width: 100%;
+    padding: 20px;
+    min-height: 700px;
 }
 
 header {
-    background-color: #007bff;
+    background-color: #512da8;
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav {
-    background-color: #343a40;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    margin: 10px 0;
 }
 
 nav ul li {
-    margin: 0;
+    display: inline;
+    margin-right: 10px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #007bff;
-    color: white;
+    color: #512da8;
+    font-weight: bold;
 }
 
 main {
     padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
-section {
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #343a40;
-    color: white;
+main h2 {
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #333;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* Form styles */
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-form label {
-    margin: 10px 0 5px;
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-form input, form select, form button {
+.form-group label {
+    width: 20%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-group input,
+.form-group select {
+    width: 75%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-form button {
-    background-color: #007bff;
+.campoTexto {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.boton {
+    background-color: #512da8;
     color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #0056b3;
+.boton:hover {
+    background-color: #6a1b9a;
 }
 
-/* Table styles */
-table {
+footer {
+    background-color: #512da8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.productos-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
-table, th, td {
-    border: 1px solid #dee2e6;
-}
-
-th, td {
-    padding: 12px;
+.productos-table th, .productos-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: left;
 }
 
-th {
-    background-color: #e9ecef;
+.productos-table th {
+    background-color: #512da8;
+    color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #f8f9fa;
+.productos-table tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-tr:hover {
-    background-color: #e2e6ea;
+.boton-actualizar {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.boton-eliminar {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.boton-actualizar:hover, .boton-eliminar:hover {
+    opacity: 0.8;
+}
+
+.boton-centro {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos adicionales */
+.menu-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.menu-section {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.menu-section h3 {
+    text-align: center;
+    color: #333;
+}
+
+.menu-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-section ul li {
+    margin: 5px 0;
+}
+
+.menu-section ul li a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-section ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buscar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.buscar form {
+    display: inline-block;
+}
+
+.buscar input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buscar button {
+    padding: 6px 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.buscar button:hover {
+    background: #0056b3;
+}
+
+footer {
+    background-color: #512da8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    margin-top: 20px;
 }

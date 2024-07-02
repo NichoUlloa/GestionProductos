@@ -9,17 +9,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <title>Ingresar ID de Producto</title>
+    <title>Ingresar ID de Producto a Eliminar</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
-<h1 class="encabezado">Ingresar ID de Producto a Eliminar</h1>
-<form action="eliminarProducto" method="post">
-    <div class="centrado">
-        <label>ID Producto:</label>
-        <input type="number" name="idProducto" required class="campoTexto"><br><br>
-        <input type="submit" value="Eliminar producto" class="boton">
-    </div>
-</form>
+<header>
+    <h1>Ingresar ID de Producto a Eliminar</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="${pageContext.request.contextPath}/index.jsp">Inicio</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Formulario de Ingresar ID</h2>
+        <form action="eliminarProducto" method="post">
+            <div class="centrado">
+                <label>ID del Producto:</label>
+                <input name="idProducto" type="number" class="campoTexto"><br><br>
+                <input type="submit" value="Eliminar Producto" class="boton">
+            </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Gestión de Productos. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>
+

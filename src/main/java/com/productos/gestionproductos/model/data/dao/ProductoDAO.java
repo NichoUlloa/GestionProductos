@@ -1,5 +1,7 @@
 package com.productos.gestionproductos.model.data.dao;
 
+import com.productos.gestionproductos.model.Categoria;
+import com.productos.gestionproductos.model.Marca;
 import com.productos.gestionproductos.model.Producto;
 import org.jooq.*;
 import org.jooq.Record;
@@ -17,9 +19,12 @@ public class ProductoDAO {
         Field<String> nombre = field(name("nombreProducto"), VARCHAR(100));
         Field<Double> precio = field(name("precioProducto"), DOUBLE);
         Field<Integer> stock = field(name("stockProducto"), INTEGER);
+        Field<Integer> idMarca = field(name("idMarca"), INTEGER);
+        Field<Integer> idCategoria = field(name("idCategoria"), INTEGER);
 
-        query.insertInto(tablaProducto, nombre, precio, stock)
-                .values(producto.getNombreProducto(), producto.getPrecioProducto(), producto.getStockProducto())
+        query.insertInto(tablaProducto, nombre, precio, stock, idMarca, idCategoria)
+                .values(producto.getNombreProducto(), producto.getPrecioProducto(), producto.getStockProducto(),
+                        producto.getMarca().getIdMarca(), producto.getCategoria().getIdCategoria())
                 .execute();
     }
 
@@ -49,8 +54,24 @@ public class ProductoDAO {
             String nombreProducto = resultado.get("nombreProducto", String.class);
             double precioProducto = resultado.get("precioProducto", Double.class);
             int stockProducto = resultado.get("stockProducto", Integer.class);
-            productos.add(new Producto(idProducto, nombreProducto, precioProducto, stockProducto));
+            int idMarca = resultado.get("idMarca", Integer.class);
+            int idCategoria = resultado.get("idCategoria", Integer.class);
+
+            Marca marca = obtenerMarca(idMarca);
+            Categoria categoria = obtenerCategoria(idCategoria);
+
+            productos.add(new Producto(idProducto, nombreProducto, precioProducto, stockProducto, marca, categoria));
         }
         return productos;
+    }
+
+    private static Marca obtenerMarca(int idMarca) {
+        // Implementar lógica para obtener Marca por idMarca desde la base de datos
+        return new Marca(idMarca, "NombreMarca"); // Ejemplo, reemplazar con lógica real
+    }
+
+    private static Categoria obtenerCategoria(int idCategoria) {
+        // Implementar lógica para obtener Categoria por idCategoria desde la base de datos
+        return new Categoria(idCategoria, "NombreCategoria"); // Ejemplo, reemplazar con lógica real
     }
 }

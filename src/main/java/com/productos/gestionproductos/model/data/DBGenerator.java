@@ -17,6 +17,8 @@ public class DBGenerator {
         crearBaseDato(create, nombreBD);
         create = actualizarConexion(connection, nombreBD);
         crearTablaProducto(create);
+        crearTablaCategoria(create);
+        crearTablaMarca(create);
         DBConnector.closeConnection();
     }
 
@@ -43,7 +45,26 @@ public class DBGenerator {
                 .column("nombreProducto", VARCHAR(100))
                 .column("precioProducto", DOUBLE)
                 .column("stockProducto", INTEGER)
-                .constraint(primaryKey("idProducto")).execute();
+                .column("idMarca", INTEGER)  // Agregar columna para idMarca
+                .column("idCategoria", INTEGER)  // Agregar columna para idCategoria
+                .constraint(primaryKey("idProducto"))
+                .constraint(foreignKey("idMarca").references("Marca", "idMarca"))
+                .constraint(foreignKey("idCategoria").references("Categoria", "idCategoria"))
+                .execute();
+    }
+
+    private static void crearTablaCategoria(DSLContext create) {
+        create.createTableIfNotExists("Categoria")
+                .column("idCategoria", INTEGER.identity(true))
+                .column("nombreCategoria", VARCHAR(100))
+                .constraint(primaryKey("idCategoria")).execute();
+    }
+
+    private static void crearTablaMarca(DSLContext create) {
+        create.createTableIfNotExists("Marca")
+                .column("idMarca", INTEGER.identity(true))
+                .column("nombreMarca", VARCHAR(100))
+                .constraint(primaryKey("idMarca")).execute();
     }
 
     private static void relacionarTabla(DSLContext create, String nombreTabla, String claveForanea, String nombreTablaRelacion) {

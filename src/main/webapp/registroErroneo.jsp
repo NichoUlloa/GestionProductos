@@ -9,22 +9,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <title>Registro Erróneo</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
-<h1 class="encabezado">Registro Erróneo</h1>
-<h2 class="subtitulo">Datos incorrectos, por favor verifique e intente nuevamente.</h2>
-<form action="agregarProducto" method="post">
-    <div class="centrado">
-        <label> Nombre:</label>
-        <input name="nombre" type="text" class="campoTexto">
-        <label> Precio:</label>
-        <input name="precio" type="text" class="campoTexto">
-        <label> Stock:</label>
-        <input name="stock" type="number" class="campoTexto"><br><br>
-        <input type="submit" value="Intentar nuevamente" class="boton">
-    </div>
-</form>
+<header>
+    <h1>Registro Erróneo</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="${pageContext.request.contextPath}/index.jsp">Inicio</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Ha ocurrido un error al intentar registrar el producto.</h2>
+        <p>Por favor, vuelva a intentarlo.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Gestión de Productos. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>
+
